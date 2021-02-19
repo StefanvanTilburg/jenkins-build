@@ -4,7 +4,7 @@ plugins {
     id 'base'
     id 'com.palantir.docker' version '0.25.0'
     id 'com.palantir.docker-run' version '0.25.0'
-    id 'pl.allegro.tech.build.axion-release' version '1.10.1'
+    id 'pl.allegro.tech.build.axion-release' version '1.12.0'
 }
 
 project.version = scmVersion.version
@@ -22,6 +22,7 @@ if (DefaultNativePlatform.getCurrentOperatingSystem().isWindows()) {
 } else {
     throw new GradleException("Unsupported operating system. No way to find group of /var/run/docker.sock.")
 }
+
 def out = new ByteArrayOutputStream()
 process.waitForProcessOutput(out, System.err)
 String dockerSockGroupId = out.toString().trim()
