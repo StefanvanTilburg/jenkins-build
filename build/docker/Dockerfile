@@ -4,7 +4,7 @@ USER root
 RUN apt-get update
 RUN curl -fsSL https://get.docker.com/ | sh
 RUN usermod -a -G docker jenkins
-RUN su jenkins
+RUN newgrp docker
 USER jenkins
 
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
