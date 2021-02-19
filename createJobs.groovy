@@ -31,7 +31,7 @@ pipelineJob('theme-park-job-docker') {
                         url 'https://github.com/StefanvanTilburg/ThemeparkRideApi.git'
                     }
                     branch 'master'
-                    scriptPath('Jenkinsfile-docker')
+                    scriptPath('Jenkinsfile')
                 }
             }
         }
