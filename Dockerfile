@@ -3,7 +3,6 @@ FROM jenkins/jenkins:2.271-jdk11
 USER root
 RUN apt-get update
 RUN curl -fsSL https://get.docker.com/ | sh
-RUN useradd -u 8877 jenkins
 RUN usermod -aG docker jenkins
 RUN newgrp docker
 USER jenkins
