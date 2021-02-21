@@ -25,9 +25,9 @@ if (DefaultNativePlatform.getCurrentOperatingSystem().isWindows()) {
 
 def out = new ByteArrayOutputStream()
 process.waitForProcessOutput(out, System.err)
-//String dockerSockGroupId = out.toString().trim()
+String dockerSockGroupId = out.toString().trim()
 //should be default userid of user jenkins which comes default with jenkins image line 1 dockerfile
-String dockerSockGroupId = '1000'
+//String dockerSockGroupId = '1000'
 
 dockerRun {
     name "${project.name}"
